@@ -9,8 +9,6 @@ A Minecraft Fabric mod that allows you to disable advancements and their trackin
 1. **Fabric Mod Loader**
 2. **Fabric API**
 
----
-
 ## Configuration
 
 ### Config File
@@ -24,8 +22,6 @@ Edit `config/disable_advancements_in_dimensions.json` to add/remove dimension ID
   ]
 }
 ```
-
----
 
 ## Commands
 
@@ -45,8 +41,6 @@ Edit `config/disable_advancements_in_dimensions.json` to add/remove dimension ID
 - Requires operator permissions.
 - Changes are saved to the config file immediately.
 - Accepts only valid dimension IDs.
-
----
 
 ## License
 
