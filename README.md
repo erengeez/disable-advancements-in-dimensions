@@ -2,8 +2,6 @@
 
 A Minecraft Fabric mod that allows you to disable advancements and their tracking in specific dimensions. Perfect for isolating custom dimensions (e.g., creative worlds) from interfering with your survival world's progression.
 
----
-
 ## Requirements
 
 1. **Fabric Mod Loader**
