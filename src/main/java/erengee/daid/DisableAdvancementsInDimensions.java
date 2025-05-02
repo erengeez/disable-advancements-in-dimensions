@@ -1,12 +1,12 @@
-package erengee.napd;
+package erengee.daid;
 
 import net.fabricmc.api.ModInitializer;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-public class NoAdvancementsPerDimensions implements ModInitializer {
-	public static final String MOD_ID = "no-advancements-per-dimensions";
+public class DisableAdvancementsInDimensions implements ModInitializer {
+	public static final String MOD_ID = "disable-advancements-in-dimensions";
 
 	// This logger is used to write text to the console and the log file.
 	// It is considered best practice to use your mod id as the logger's name.

@@ -1,36 +1,29 @@
 {
 	"schemaVersion": 1,
-	"id": "no-advancements-per-dimensions",
+	"id": "disable-advancements-in-dimensions",
 	"version": "${version}",
-	"name": "No Advancements Per Dimensions",
-	"description": "This is an example description! Tell everyone what your mod is about!",
+	"name": "Disable Advancements in Dimensions",
+	"description": "Allows disabling advancements in specific dimensions",
 	"authors": [
-		"Me!"
+		"erengee"
 	],
 	"contact": {
 		"homepage": "https://fabricmc.net/",
 		"sources": "https://github.com/FabricMC/fabric-example-mod"
 	},
-	"license": "CC0-1.0",
-	"icon": "assets/no-advancements-per-dimensions/icon.png",
+	"license": "MIT",
+	"icon": "assets/disable-advancements-in-dimensions/icon.png",
 	"environment": "*",
 	"entrypoints": {
 		"main": [
-			"erengee.napd.NoAdvancementsPerDimensions"
-		],
-		"client": [
-			"erengee.napd.NoAdvancementsPerDimensionsClient"
+			"erengee.daid.DisableAdvancementsInDimensions"
 		]
 	},
 	"mixins": [
-		"no-advancements-per-dimensions.mixins.json",
-		{
-			"config": "no-advancements-per-dimensions.client.mixins.json",
-			"environment": "client"
-		}
+		"disable-advancements-in-dimensions.mixins.json"
 	],
 	"depends": {
-		"fabricloader": ">=0.16.14",
+		"fabricloader": ">=0.16.0",
 		"minecraft": "~1.21",
 		"java": ">=21",
 		"fabric-api": "*"

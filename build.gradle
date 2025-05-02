@@ -22,9 +22,8 @@ loom {
 	splitEnvironmentSourceSets()
 
 	mods {
-		"no-advancements-per-dimensions" {
+		"disable-advancements-in-dimensions" {
 			sourceSet sourceSets.main
-			sourceSet sourceSets.client
 		}
 	}
 
