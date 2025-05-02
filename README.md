@@ -35,7 +35,7 @@ Edit `config/disable_advancements_in_dimensions.json` to add/remove dimension ID
   ```
   /enable_advancements <dimensionId>
   ```
-  Example: `/enable_advancements custom_mod:mining_world`
+  Example: `/enable_advancements custom_mod:creative_dimension`
 
 **Notes**:
 - Requires operator permissions.
