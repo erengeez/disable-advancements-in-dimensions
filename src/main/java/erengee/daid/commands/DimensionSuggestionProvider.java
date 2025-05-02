@@ -12,6 +12,7 @@ import net.minecraft.server.command.ServerCommandSource;
 import net.minecraft.util.Identifier;
 import net.minecraft.world.dimension.DimensionType;
 
+import java.util.Optional;
 import java.util.concurrent.CompletableFuture;
 import java.util.stream.Stream;
 
@@ -32,15 +33,18 @@ public class DimensionSuggestionProvider implements SuggestionProvider<ServerCom
     public CompletableFuture<Suggestions> getSuggestions(CommandContext<ServerCommandSource> context,
                                                          SuggestionsBuilder builder) throws CommandSyntaxException {
         ServerCommandSource source = context.getSource();
-        Registry<DimensionType> dimensionsRegistry = source.getRegistryManager().get(RegistryKeys.DIMENSION_TYPE);
+        Optional<Registry<DimensionType>> dimensionsRegistry =
+                source.getRegistryManager().getOptional(RegistryKeys.DIMENSION_TYPE);
 
-        Stream<Identifier> ids = dimensionsRegistry.getIds().stream().filter(id -> switch (mode) {
-            case ALL_DIMENSIONS -> true;
-            case BLOCKED_DIMENSIONS -> ModConfig.isDimensionBlocked(id.toString());
-            case UNBLOCKED_DIMENSIONS -> !ModConfig.isDimensionBlocked(id.toString());
-        });
+        if (dimensionsRegistry.isPresent()) {
+            Stream<Identifier> ids = dimensionsRegistry.get().getIds().stream().filter(id -> switch (mode) {
+                case ALL_DIMENSIONS -> true;
+                case BLOCKED_DIMENSIONS -> ModConfig.isDimensionBlocked(id.toString());
+                case UNBLOCKED_DIMENSIONS -> !ModConfig.isDimensionBlocked(id.toString());
+            });
 
-        ids.forEach(id -> builder.suggest(id.toString()));
+            ids.forEach(id -> builder.suggest(id.toString()));
+        }
 
         return builder.buildFuture();
     }
