@@ -3,7 +3,7 @@
 	"package": "erengee.daid.mixin",
 	"compatibilityLevel": "JAVA_21",
 	"mixins": [
-		"AbstractCriterionMixin"
+		"PlayerAdvancementTrackerMixin"
 	],
 	"injectors": {
 		"defaultRequire": 1

@@ -1,8 +1,6 @@
 package erengee.daid;
 
 import com.mojang.brigadier.Command;
-import com.mojang.brigadier.arguments.StringArgumentType;
-import com.mojang.brigadier.builder.LiteralArgumentBuilder;
 import erengee.daid.commands.DimensionSuggestionProvider;
 import erengee.daid.commands.DimensionSuggestionsMode;
 import erengee.daid.config.ModConfig;
@@ -15,12 +13,9 @@ import net.minecraft.registry.entry.RegistryEntry;
 import net.minecraft.server.command.CommandManager;
 import net.minecraft.server.command.ServerCommandSource;
 import net.minecraft.text.Text;
-import net.minecraft.world.dimension.DimensionOptions;
 import net.minecraft.world.dimension.DimensionType;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-
-import java.lang.ref.Reference;
 
 public class DisableAdvancementsInDimensions implements ModInitializer {
     public static final String MOD_ID = "disable-advancements-in-dimensions";
